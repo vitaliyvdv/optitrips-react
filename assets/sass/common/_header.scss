@@ -1,0 +1,29 @@
+.header {
+  top: 0;
+  left: 0;
+  height: 72px;
+  background-color: $white;
+  z-index: 10;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s, box-shadow 0.4s ease 0s;
+  @include raised-4;
+
+  &.sticky {
+    @include raised-6;
+  }
+
+  .btn-header {
+    padding: 0 12px;
+    color: $body-color;
+
+    .btn-value {
+      text-transform: none;
+      font-weight: normal;
+    }
+  }
+
+  .btn-menu {
+    width: 40px;
+    height: 40px;
+    color: $body-color;
+  }
+}

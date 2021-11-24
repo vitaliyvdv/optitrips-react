@@ -1,0 +1,44 @@
+.snackbar {
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  user-select: none;
+  z-index: 9;
+
+  &-surface {
+    border-radius: $border-radius;
+    background-color: $gray-800;
+    color: rgba($white, 0.87);
+    font-size: $font-size-sm;
+    line-height: 1.5;
+    letter-spacing: 0.0178571429em;
+    @include raised-4;
+    visibility: hidden;
+    opacity: 0;
+    transition: $visibility-transition;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0s;
+    }
+  }
+
+  &-labels {
+    &--item {
+      & + & {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &-close {
+    width: 36px;
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      color: inherit;
+    }
+  }
+}

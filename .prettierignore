@@ -1,0 +1,12 @@
+node_modules
+dist
+**/.{git,svn,hg}/**
+./.{git,svn,hg}/**
+*.json
+*.php
+/assets/html
+*.md
+*.asax
+*.csproj
+*.sln
+service-worker.js

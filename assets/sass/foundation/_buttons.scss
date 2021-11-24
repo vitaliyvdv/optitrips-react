@@ -1,0 +1,289 @@
+.btn {
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0.0892857143em;
+  font-weight: $font-weight-medium;
+  margin: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: $border-radius;
+  color: $primary;
+  transition: all 0.4s ease 0s, color 0.4s ease 0s;
+  @extend %user-select-none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
+    color: $primary;
+    background-color: transparent;
+  }
+
+  &-md:not(.btn-link) {
+    height: 48px;
+  }
+
+  &-sm:not(.btn-link) {
+    height: 40px;
+  }
+
+  &-lg:not(.btn-link) {
+    height: 56px;
+  }
+
+  &:not(&-raised) {
+    &:not(:disabled):not(.disabled) {
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &-value {
+    font-size: 14px;
+    line-height: 1.2;
+    * + & {
+      margin-left: 8px;
+    }
+  }
+
+  &[disabled],
+  &:disabled {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: default;
+      opacity: 1;
+    }
+  }
+
+  &:not(.btn-outline):not(.btn-link) {
+    &.btn-primary {
+      &:not(:disabled) {
+        &,
+        &:visited,
+        &:focus {
+          background-color: $primary;
+          color: $white;
+          border: none;
+          outline: none;
+        }
+        .no-mobile &:hover,
+        .mobile &:active {
+          background-color: $primary;
+          color: $white;
+          outline: none;
+        }
+      }
+
+      &:disabled {
+        &:not(.btn-link) {
+          &,
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: $primary;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    &.btn-secondary {
+      &:not(:disabled) {
+        &,
+        &:visited,
+        &:focus {
+          background-color: $secondary;
+          color: $white;
+          border: none;
+          outline: none;
+        }
+        .no-mobile &:hover,
+        .mobile &:active {
+          background-color: $secondary-dark;
+          color: $white;
+          outline: none;
+        }
+      }
+    }
+
+    &.btn-gray,
+    &.btn-silver {
+      &:not(:disabled) {
+        &,
+        &:visited,
+        &:focus {
+          background-color: $gray-200;
+          color: $body-color;
+          border: none;
+          outline: none;
+        }
+        .no-mobile &:hover,
+        .mobile &:active {
+          background-color: $gray-300;
+          color: $body-color;
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    &.btn-transparent {
+      &:not(:disabled) {
+        &,
+        &:visited,
+        &:focus {
+          background-color: transparent;
+          color: $body-color;
+          border: none;
+          outline: none;
+
+          .material-icons {
+            color: rgba($black, 0.54);
+            fill: rgba($black, 0.54);
+          }
+        }
+        .no-mobile &:hover,
+        .mobile &:active {
+          background-color: $gray-300;
+          color: $body-color;
+          outline: none;
+          box-shadow: none;
+
+          .material-icons {
+            color: $body-color;
+            fill: $body-color;
+          }
+        }
+      }
+    }
+  }
+
+  &.btn-outline {
+    border-style: solid;
+    border-width: 1px;
+
+    &.btn-primary {
+      &,
+      &:visited,
+      &:focus {
+        background-color: transparent;
+        border-color: $primary;
+        color: $primary;
+      }
+      &:hover,
+      &:active,
+      .no-mobile &:hover,
+      .mobile &:active {
+        background-color: $primary;
+        color: $white;
+        border-color: $primary;
+      }
+    }
+
+    &.btn-gray,
+    &.btn-silver {
+      &,
+      &:visited,
+      &:focus {
+        background-color: transparent;
+        border-color: rgba($gray-400, 0.7);
+        color: currentColor;
+      }
+
+      &:hover,
+      &:active,
+      .no-mobile &:hover,
+      .mobile &:active {
+        background-color: $gray-100;
+        border-color: rgba($gray-400, 0.7);
+        color: currentColor;
+      }
+    }
+  }
+
+  &.btn-raised {
+    &,
+    &:visited,
+    &:focus {
+      @include raised-2;
+    }
+
+    &:hover,
+    &:active,
+    .no-mobile &:hover,
+    .mobile &:active {
+      &:not(:disabled):not(.disabled) {
+        @include raised-4;
+      }
+    }
+  }
+
+  &.btn-dropdown {
+    &.dropdown-dark {
+      &:not(:disabled),
+      &:not(:disabled):focus {
+        color: $body-color;
+        background-color: transparent;
+        box-shadow: none;
+        outline: none;
+      }
+      .no-mobile &:not(:disabled):hover,
+      .mobile &:not(:disabled):active {
+        background-color: $gray-200;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+    &.dropdown-light {
+      &,
+      &:focus {
+        color: $white;
+        background-color: transparent;
+        outline: none;
+      }
+      .no-mobile &:hover,
+      .mobile &:active {
+        background-color: transparent;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+
+  &-link {
+    height: 36px;
+
+    &,
+    &:visited &:hover,
+    &:active,
+    &:focus {
+      &:not(:disabled):not(.disabled) {
+        color: $primary;
+        fill: $primary;
+        background-color: transparent;
+        box-shadow: none;
+        outline: none;
+      }
+
+      &:disabled {
+        color: $gray-400;
+        fill: $gray-400;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &-dropdown &-value {
+    font-weight: $font-weight-normal;
+  }
+}

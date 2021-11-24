@@ -1,0 +1,22 @@
+.chip {
+  height: 32px;
+  cursor: pointer;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
+
+  &,
+  &:focus {
+    background-color: $gray-300;
+  }
+
+  .no-mobile &:hover,
+  .mobile &:active {
+    background-color: rgba($gray-400, 0.6);
+  }
+
+  &-text {
+    font-size: $font-size-sm;
+    line-height: 1.5;
+    letter-spacing: 0.25px;
+    white-space: nowrap;
+  }
+}

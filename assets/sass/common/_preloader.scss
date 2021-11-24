@@ -1,0 +1,14 @@
+.preloader {
+  &-icon {
+    width: 48px;
+
+    &:before {
+      @extend %before-block;
+      padding: 0 0 100%;
+    }
+  }
+
+  svg {
+    @extend %top-0-left-0;
+  }
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Economy",
+        "value": "Economy"
+    },
+    {
+        "name": "Premium Economy",
+        "value": "PremiumEconomy"
+    },
+    {
+        "name": "Business",
+        "value": "Business"
+    },
+    {
+        "name": "First",
+        "value": "First"
+    }
+]

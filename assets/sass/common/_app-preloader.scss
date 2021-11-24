@@ -1,0 +1,28 @@
+.app-preloader {
+  @extend %top-0-left-0;
+  background-color: rgba($black, 0.32);
+  @extend %user-select-none;
+  opacity: 0;
+  visibility: hidden;
+  transition: $visibility-transition;
+  z-index: 12;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  &--container {
+    width: 48px;
+
+    &:before {
+      @extend %before-block;
+      padding: 0 0 100%;
+    }
+  }
+
+  svg {
+    @extend %top-0-left-0;
+  }
+}

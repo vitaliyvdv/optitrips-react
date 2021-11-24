@@ -1,0 +1,67 @@
+.buttons-list {
+  padding: 8px 0;
+
+  &--item {
+    height: 56px;
+
+    &.two-line {
+      height: 72px;
+    }
+
+    &,
+    &:focus {
+      user-select: none;
+      cursor: pointer;
+      background-color: $white;
+      transition: background-color 0.4s ease 0s;
+    }
+
+    .no-mobile &:hover,
+    .mobile &:active {
+      background-color: $gray-100;
+    }
+
+    &.active {
+      /*&,
+      .no-mobile &:hover,
+      .mobile &:active,
+      &:focus {
+        background-color: $gray-300;
+      }*/
+
+      .material-icons {
+        color: $primary;
+      }
+    }
+
+    .material-icons {
+      color: rgba($black, 0.54);
+    }
+
+    input {
+      top: 0;
+      left: 0;
+    }
+
+    &-label {
+      font-size: $font-size-base;
+      line-height: 24px;
+
+      &--primary {
+        font: inherit;
+      }
+
+      &--secondary {
+        font-size: $font-size-sm;
+        line-height: 1.2;
+        letter-spacing: 0.25px;
+        color: rgba($black, 0.54);
+        margin-top: 1px;
+      }
+    }
+
+    .material-icons + &-label {
+      margin: 0 0 0 32px;
+    }
+  }
+}

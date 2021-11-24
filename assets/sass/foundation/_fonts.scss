@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(~material_icons/MaterialIcons-Regular.eot);
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url("~material_icons/MaterialIcons-Regular.eot?#iefix") format("embedded-opentype"),
+    url(~material_icons/MaterialIcons-Regular.woff2) format("woff2"),
+    url(~material_icons/MaterialIcons-Regular.woff) format("woff"),
+    url(~material_icons/MaterialIcons-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("~fonts/roboto-light-webfont.woff2") format("woff2"), url("~fonts/roboto-light-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("~fonts/roboto-lightitalic-webfont.woff2") format("woff2"),
+    url("~fonts/roboto-lightitalic-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("~fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("~fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("~fonts/roboto-italic-webfont.woff2") format("woff2"),
+    url("~fonts/roboto-italic-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("~fonts/roboto-medium-webfont.woff2") format("woff2"),
+    url("~fonts/roboto-medium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("~fonts/roboto-mediumitalic-webfont.woff2") format("woff2"),
+    url("~fonts/roboto-mediumitalic-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}

@@ -1,0 +1,82 @@
+[
+    {
+        "Code": "cs-CZ",
+        "Name": "Čeština (Česká Republika)"
+    },
+    {
+        "Code": "da-DK",
+        "Name": "Dansk (Danmark)"
+    },
+    {
+        "Code": "de-DE",
+        "Name": "Deutsch (Deutschland)"
+    },
+    {
+        "Code": "en-GB",
+        "Name": "English (United Kingdom)"
+    },
+    {
+        "Code": "en-US",
+        "Name": "English (United States)"
+    },
+    {
+        "Code": "es-ES",
+        "Name": "Español (España)"
+    },
+    {
+        "Code": "fr-FR",
+        "Name": "Français (France)"
+    },
+    {
+        "Code": "it-IT",
+        "Name": "Italiano (Italia)"
+    },
+    {
+        "Code": "hu-HU",
+        "Name": "Magyar (Magyarország)"
+    },
+    {
+        "Code": "nl-NL",
+        "Name": "Nederlands (Nederland)"
+    },
+    {
+        "Code": "nb-NO",
+        "Name": "Norsk, Bokmål (Norge)"
+    },
+    {
+        "Code": "pl-PL",
+        "Name": "Polski (Polska)"
+    },
+    {
+        "Code": "pt-PT",
+        "Name": "Português (Portugal)"
+    },
+    {
+        "Code": "ro-RO",
+        "Name": "Română (România)"
+    },
+    {
+        "Code": "fi-FI",
+        "Name": "Suomi (Suomi)"
+    },
+    {
+        "Code": "sv-SE",
+        "Name": "Svenska (Sverige)"
+    },
+    {
+        "Code": "tr-TR",
+        "Name": "Türkçe (Türkiye)"
+    },
+    {
+        "Code": "el-GR",
+        "Name": "Ελληνικά (Ελλάδα)"
+    },
+    {
+        "Code": "ru-RU",
+        "Name": "Русский (Россия)"
+    },
+    {
+        "Code": "uk-UA",
+        "Name": "Українська (Україна)"
+    }
+]

@@ -1,0 +1,23 @@
+.passengers {
+  .dialog-block {
+    max-width: 360px;
+  }
+
+  &-block {
+    &--title {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    &--input {
+      &,
+      &:hover,
+      &:active,
+      &:focus {
+        border: none;
+        outline: none;
+        width: 32px;
+      }
+    }
+  }
+}

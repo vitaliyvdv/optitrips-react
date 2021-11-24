@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Default",
+    "value": ""
+  },
+  {
+    "name": "Carrier",
+    "value": "carrier"
+  },
+  {
+    "name": "Duration",
+    "value": "duration"
+  },
+  {
+    "name": "Outbound arrive time",
+    "value": "outboundarrivetime"
+  },
+  {
+    "name": "Outbound depart time",
+    "value": "outbounddeparttime"
+  },
+  {
+    "name": "Inbound arrive time",
+    "value": "inboundarrivetime"
+  },
+  {
+    "name": "Inbound depart time",
+    "value": "inbounddeparttime"
+  },
+  {
+    "name": "Price",
+    "value": "price"
+  }
+]

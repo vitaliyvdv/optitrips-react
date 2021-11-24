@@ -1,0 +1,226 @@
+.itinerary {
+  display: grid;
+  grid-template-columns: 1fr 216px;
+  justify-items: stretch;
+  align-items: center;
+  justify-content: stretch;
+  @include raised-2;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: box-shadow 0.4s ease 0s;
+
+  .no-mobile &:hover {
+    @include raised-4;
+  }
+
+  &-legs {
+    display: grid;
+    gap: 16px;
+    border-right: 1px solid $gray-200;
+    padding: 24px;
+  }
+
+  &-leg {
+    &--title {
+      font-size: 14px;
+      line-height: 20px;
+
+      & > * {
+        display: inline;
+      }
+
+      dt {
+        font-weight: $font-weight-medium;
+      }
+
+      dd {
+        color: $gray-600;
+      }
+    }
+
+    &--content {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--logo {
+      display: grid;
+      gap: 12px;
+    }
+
+    &--img {
+      padding: 0 0 50%;
+
+      img {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--info {
+      display: grid;
+      grid-template-columns: auto 120px auto;
+      gap: 12px;
+      align-items: center;
+
+      & > *:first-child {
+        text-align: right;
+      }
+
+      & > *:last-child {
+        text-align: left;
+      }
+
+      &-route {
+        &--time {
+          font-size: 20px;
+          line-height: 1.2;
+          font-weight: $font-weight-medium;
+        }
+
+        &--code {
+          font-size: 14px;
+          line-height: 1.5;
+          color: $gray-600;
+        }
+
+        &--place {
+          font-size: 13px;
+          line-height: 20px;
+          color: $gray-500;
+        }
+      }
+    }
+
+    &--stops {
+      text-align: center;
+      font-size: 13px;
+      line-height: 20px;
+
+      &-line {
+        position: relative;
+        width: 100%;
+        height: 16px;
+
+        li {
+          position: relative;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: $white;
+
+          &:before {
+            position: absolute;
+            display: block;
+            content: "";
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            transform: translate(-50%, -50%);
+            background: $gray-500;
+            border-radius: 50%;
+          }
+        }
+
+        &:before {
+          display: block;
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          height: 2px;
+          transform: translateY(-50%);
+          background: $gray-500;
+        }
+
+        &:after {
+          display: block;
+          content: "flight";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 18px;
+          height: 18px;
+          transform: translateY(-50%) rotate(90deg);
+          background: $white;
+          color: rgba($black, 0.54);
+          @include material-icons;
+          font-size: 18px;
+        }
+      }
+
+      &-text {
+        dl {
+          &,
+          & > * {
+            display: inline;
+            font-weight: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  &-deals {
+    &--amount {
+      dt,
+      dd {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-normal;
+        color: $gray-600;
+      }
+    }
+
+    &--price {
+      font-size: $font-size-sm;
+
+      .price {
+        font-size: 20px;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+
+  &-details {
+    .dialog-block {
+      height: 100%;
+    }
+
+    &--deals {
+      &-img {
+        width: 70px;
+
+        &:before {
+          display: block;
+          content: "";
+          padding: 0 0 50%;
+        }
+
+        img {
+          top: 0;
+          left: 0;
+        }
+      }
+
+      &-content {
+        max-width: 300px;
+      }
+
+      &-descr {
+        font-size: $font-size-sm;
+        line-height: 20px;
+        color: $gray-500;
+      }
+
+      &-price {
+        width: 180px;
+      }
+    }
+  }
+}

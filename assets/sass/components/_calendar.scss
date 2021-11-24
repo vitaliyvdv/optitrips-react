@@ -1,0 +1,13 @@
+.calendar {
+  .dialog-block {
+    max-width: 360px;
+
+    &--body {
+      padding: 8px 16px 16px !important;
+
+      @include media-breakpoint-down(xs) {
+        padding: 8px 8px 12px !important;
+      }
+    }
+  }
+}

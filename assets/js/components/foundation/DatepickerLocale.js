@@ -1,0 +1,22 @@
+import { registerLocale, setDefaultLocale } from "react-datepicker";
+import { enGB, enUS, cs, da, de, it, es, fr, nl, nb, pl, pt, ro, fi, sv, tr, el, ru, uk } from "date-fns/esm/locale";
+
+registerLocale("en-GB", enGB);
+registerLocale("en-US", enUS);
+registerLocale("cs", cs);
+registerLocale("da", da);
+registerLocale("de", de);
+registerLocale("it", it);
+registerLocale("es", es);
+registerLocale("fr", fr);
+registerLocale("nl", nl);
+registerLocale("nb", nb);
+registerLocale("pl", pl);
+registerLocale("pt", pt);
+registerLocale("ro", ro);
+registerLocale("fi", fi);
+registerLocale("sv", sv);
+registerLocale("tr", tr);
+registerLocale("el", el);
+registerLocale("ru", ru);
+registerLocale("ua", uk);

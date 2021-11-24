@@ -1,0 +1,46 @@
+.autocomplete {
+  .dialog-block {
+    height: 100% !important;
+
+    @include media-breakpoint-up(md) {
+      max-height: 492px !important;
+    }
+  }
+
+  &-fieldset {
+    height: 64px;
+    margin: 0;
+    padding: 0 16px 0 4px;
+
+    &--icon {
+      width: 64px;
+      margin: 0 12px 0 0;
+    }
+
+    &--field {
+      input {
+        &,
+        &:hover,
+        &:focus {
+          outline: none;
+          border: none;
+        }
+      }
+    }
+
+    &--cancel {
+      &,
+      &:hover,
+      &:active,
+      &:focus {
+        width: 40px;
+        height: 40px;
+        border: none;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        background: transparent;
+      }
+    }
+  }
+}

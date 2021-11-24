@@ -1,0 +1,32 @@
+.app-start {
+  @extend %top-0-left-0;
+  background-color: $blue-700;
+  z-index: 12;
+  @extend %user-select-none;
+  opacity: 0;
+  visibility: hidden;
+  transition: $visibility-transition;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  &--logo {
+    color: $white;
+  }
+
+  &--preloader {
+    width: 48px;
+
+    &:before {
+      @extend %before-block;
+      padding: 0 0 100%;
+    }
+
+    svg {
+      @extend %top-0-left-0;
+    }
+  }
+}

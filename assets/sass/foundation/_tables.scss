@@ -1,0 +1,33 @@
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  border: 1px solid $gray-400;
+
+  tr {
+    &:first-child {
+      td {
+        padding: 8px 10px;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: $font-weight-semibold;
+      }
+    }
+
+    td {
+      border: 1px solid $gray-400;
+      padding: 6px 10px;
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+}

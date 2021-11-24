@@ -1,0 +1,15 @@
+.navigation {
+  @include media-breakpoint-up(md) {
+    &-top {
+      height: 72px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      visibility: hidden;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+  }
+}

@@ -1,0 +1,38 @@
+.flights {
+  &-results {
+    &--sort {
+      &-type {
+        display: block;
+        margin: 0;
+        height: 40px;
+        cursor: pointer;
+
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+          outline: none;
+        }
+
+        dd,
+        dt {
+          margin: 0;
+        }
+
+        dt {
+          font-weight: $font-weight-medium;
+        }
+
+        dd {
+          color: $gray-600;
+          margin-left: 4px;
+        }
+      }
+    }
+
+    &--list {
+      display: grid;
+      gap: 24px;
+    }
+  }
+}

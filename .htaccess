@@ -1,0 +1,178 @@
+# ----------------------------------------------------------------------
+# | Character encodings                                                |
+# ----------------------------------------------------------------------
+
+# Serve all resources labeled as `text/html` or `text/plain`
+# with the media type `charset` parameter set to `UTF-8`.
+#
+# https://httpd.apache.org/docs/current/mod/core.html#adddefaultcharset
+
+AddDefaultCharset utf-8
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Serve the following file types with the media type `charset`
+# parameter set to `UTF-8`.
+#
+# https://httpd.apache.org/docs/current/mod/mod_mime.html#addcharset
+
+<IfModule mod_mime.c>
+AddCharset utf-8 .atom \
+.bbaw \
+.css \
+.geojson \
+.js \
+.json \
+.jsonld \
+.manifest \
+.rdf \
+.rss \
+.topojson \
+.vtt \
+.webapp \
+.webmanifest \
+.xloc \
+.xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Webfont access
+# ----------------------------------------------------------------------
+
+#
+# allow access from all domains for webfonts
+# alternatively you could only whitelist
+# your subdomains like "sub.domain.com"
+#
+
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css)$">
+<IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# Отключение заголовка ETag
+# ----------------------------------------------------------------------
+
+# FileETag None is not enough for every server.
+<IfModule mod_headers.c>
+	Header unset ETag
+</IfModule>
+FileETag None
+
+# ----------------------------------------------------------------------
+# Запрет отдачи HTTP-заголовков Vary браузерам семейства MSIE
+# ----------------------------------------------------------------------
+<IfModule mod_setenvif.c>
+BrowserMatch "MSIE" force-no-vary
+BrowserMatch "Mozilla/4.[0-9]{2}" force-no-vary
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Защита файла .htaccess
+# ----------------------------------------------------------------------
+<Files .htaccess>
+Order		Allow,Deny
+Deny from	all
+</Files>
+
+# ----------------------------------------------------------------------
+# Start rewrite engine (редиректы)
+# ----------------------------------------------------------------------
+
+## Can be commented out if causes errors, see notes above.
+#Options +SymLinksIfOwnerMatch
+
+## Mod_rewrite in use.
+
+RewriteEngine On
+
+#
+# Block out any script trying to base64_encode data within the URL.
+RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+# Block out any script that includes a <script> tag in URL.
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+# Block out any script trying to set a PHP GLOBALS variable via URL.
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+# Block out any script trying to modify a _REQUEST variable via URL.
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+# Return 403 Forbidden header and show the content of the root homepage
+RewriteRule .* index.php [F]
+#
+## End - Rewrite rules to block out some common exploits.
+
+# ----------------------------------------------------------------------
+# Переадрессация с домена без www на домен с www
+# ----------------------------------------------------------------------
+#
+RewriteCond %{HTTP_HOST} ^([^www].*)$
+RewriteRule ^(.*)$ http://www.%1/$1 [L,R=301]
+
+# ----------------------------------------------------------------------
+# Переадрессация с домена www на домен без www
+# ----------------------------------------------------------------------
+#
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$
+#RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+#
+# ----------------------------------------------------------------------
+# Редирект с протокола http на https
+# ----------------------------------------------------------------------
+#
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+#
+
+RewriteBase /
+
+#
+#
+# If the requested path and file is not /index.php and the request
+# has not already been internally rewritten to the index.php script
+RewriteCond %{REQUEST_URI} !^/index\.php
+# and the request is for something within the component folder,
+# or for the site root, or for an extensionless URL, or the
+# requested URL ends with one of the listed extensions
+RewriteCond %{REQUEST_URI} /component/|(/[^.]*|\.(php|html?|feed|pdf|vcf|raw))$ [NC]
+# and the requested path and file doesn't directly match a physical file
+RewriteCond %{REQUEST_FILENAME} !-f
+# and the requested path and file doesn't directly match a physical folder
+RewriteCond %{REQUEST_FILENAME} !-d
+# internally rewrite the request to the index.php script
+RewriteRule .* index.php [L]
+
+# ----------------------------------------------------------------------
+# | Server-side technology information                                 |
+# ----------------------------------------------------------------------
+
+# Remove the `X-Powered-By` response header that:
+#
+#  * is set by some frameworks and server-side languages
+#    (e.g.: ASP.NET, PHP), and its value contains information
+#    about them (e.g.: their name, version number)
+#
+#  * doesn't provide any value to users, contributes to header
+#    bloat, and in some cases, the information it provides can
+#    expose vulnerabilities
+#
+# (!) If you can, you should disable the `X-Powered-By` header from the
+# language / framework level (e.g.: for PHP, you can do that by setting
+# `expose_php = off` in `php.ini`)
+#
+# https://php.net/manual/en/ini.core.php#ini.expose-php
+
+<IfModule mod_headers.c>
+Header unset X-Powered-By
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Server software information                                        |
+# ----------------------------------------------------------------------
+
+# Prevent Apache from adding a trailing footer line containing
+# information about the server to the server-generated documents
+# (e.g.: error messages, directory listings, etc.)
+#
+# https://httpd.apache.org/docs/current/mod/core.html#serversignature
+
+ServerSignature Off

@@ -1,0 +1,77 @@
+.menu {
+  @include media-breakpoint-up(md) {
+    height: 100%;
+    padding: 0 0 0 100px;
+
+    &-item {
+      height: 100%;
+
+      &--link {
+        @at-root {
+          a#{&} {
+            &,
+            &:visited,
+            &:focus {
+              height: 100%;
+              outline: none;
+              color: $body-color;
+              visibility: visible;
+            }
+
+            .no-mobile &:hover,
+            .mobile &:active {
+              color: $body-color;
+            }
+
+            &.active {
+              &,
+              &:visited,
+              &:focus,
+              &:hover,
+              &:active {
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+
+      &--title {
+        line-height: 1.5;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &-item {
+      width: 100%;
+
+      &--link {
+        &,
+        &:visited,
+        &:focus {
+          height: 56px;
+          transition: background-color 0.4s ease 0s;
+          border: none;
+          background-color: transparent;
+          outline: none;
+          cursor: pointer;
+          user-select: none;
+        }
+
+        .no-mobile &:not(.active):hover,
+        .mobile &:not(.active):active {
+          background-color: $gray-100;
+        }
+
+        &.active {
+          &,
+          &:hover,
+          &:active {
+            background-color: $gray-300;
+          }
+        }
+      }
+    }
+  }
+}
